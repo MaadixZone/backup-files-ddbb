@@ -14,16 +14,16 @@ BACK UP SCRIPT FOR DATABASES AND FILES
  Backups are stored in $mainpath/$servername 
  You may wish to set $mainpath as needed  
 
- mainpath="/YOUR/PATH/HERE"
- |
- |__$mainpath/$servername/daily
-               |__/ddbb
-               |__/files
+ mainpath="/YOUR/PATH/HERE"  
+ |  
+ |__$mainpath/$servername/daily  
+               |__/ddbb  
+               |__/files  
 
- |
- |__$mainpath/$servername/weekly
-               |__/ddbb
-               |__/files
+ |  
+ |__$mainpath/$servername/weekly  
+               |__/ddbb  
+               |__/files  
 
  It's better to store copies in different folders, as this script  
  will delete older copies, leaving only newest `n` ones  
@@ -33,8 +33,8 @@ BACK UP SCRIPT FOR DATABASES AND FILES
  and we can set different policies for each of them  
 
 ## Requirements
-root acces
-Mysql
+root acces  
+Mysql  
 
 
 ## Usage
