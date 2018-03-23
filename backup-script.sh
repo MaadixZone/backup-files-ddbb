@@ -107,18 +107,18 @@ fi
 #Delete backups daily leaving 7 newest copies in database backup folder
 # Change head -n -xxx value to increase or decrease the number of copy you want to save
 if [ -d "$bfolderddbb" ]; then
-  deletedailydb=$(find $bfolderddbb -type f | sort -n | head -n -7 | xargs rm )
+  deletedailydb=$(find $bfolderddbb -type f -printf "%T@ $bfolderddbb/%f\n" | sort -n | awk '{ print $2 }' | head -n -7 | xargs rm )
 fi
 #Delete backups daily leaving 7 newest copies in database backup folder
 if [ -d "$bfolderfiles" ]; then
-  deletedailyfiles=$(find $bfolderfiles -type f | sort -n | head -n -7 | xargs rm ) 
+  deletedailyfiles=$(find $bfolderfiles -type f -printf "%T@ $bfolderfiles/%f\n" | sort -n |  awk '{ print $2 }' | head -n -7 | xargs rm ) 
 fi
 #Delete files backups weekly leaving 7 newest copies 
 if [ -d "$bfolderweeklyddbb" ]; then
-  deletedbweek=$(find $bfolderweeklyddbb -type f | sort -n | head -n -7 | xargs rm )
+  deletedbweek=$(find $bfolderweeklyddbb -type f -printf "%T@ $bfolderweeklyddbb/%f\n" | sort -n | awk '{ print $2 }' | head -n -7 | xargs rm )
 fi
 #Delete files backups weekly leaving 7 newest copies 
 if [ -d "$bfolderweeklyfiles" ]; then
-  deletefilesweek=$(find $bfolderweeklyfiles -type f | sort -n | head -n -7 | xargs rm )
+  deletefilesweek=$(find $bfolderweeklyfiles -type f -printf "%T@ $bfolderweeklyfiles/%f\n" | sort -n | awk '{ print $2 }' | head -n -7 | xargs rm )
 fi
 
