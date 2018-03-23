@@ -14,12 +14,13 @@ BACK UP SCRIPT FOR DATABASES AND FILES
  Backups are stored in $mainpath/$servername 
  You may wish to set $mainpath as needed  
 
- mainpath="/YOUR/PATH/HERE"  
+ mainpath="/YOUR/PATH/HERE" 
+
      |  
      |__ $mainpath/$servername/daily  
                |__ /ddbb  
                |__ /files  
-
+     
      |  
      |__$mainpath/$servername/weekly  
                |__/ddbb  
