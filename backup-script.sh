@@ -75,7 +75,7 @@ apps="/var/www/html"
 
 # Make a copy of Owncloud and nextcloud data.
 # If in the future there will be other folder to backup, outside of
-# /avr/www/html, add them here following same logig
+# /var/www/html, add them here following same logig
 ncexists=""
 ocexists=""
 #Check if OC and Nextcloud Data folder exists.
