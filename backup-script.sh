@@ -35,6 +35,8 @@ servername="$(hostname)"
 #Change this with the path you want the backups to be stores
 # mainpath="/YOUR/PATH/HERE"
 mainpath="/home/ansible/backups"
+# username="YOUR-USER-NAME"
+username="ansible"
 # directory for daily databases
 if [[ ! -d "$mainpath/$servername/daily/ddbb" ]]; then
   mkdir -p $mainpath/$servername/daily/ddbb
@@ -66,7 +68,7 @@ bfolderweeklyfiles="$mainpath/$servername/weekly/files"
 #Backup all ddbb
 filenamedb=allddbb_$(date +%Y-%m-%d_%H-%M).gz
 mysqldump --all-databases | gzip -c > $bfolderddbb/$filenamedb
-chown ansible $bfolderddbb/$filenamedb
+chown $username $bfolderddbb/$filenamedb
 chmod 600 $bfolderddbb/$filenamedb
 
 #Backup /var/www
@@ -89,7 +91,7 @@ if [ -d "/var/www/owncloud/data" ]; then
 fi
 appsinvar="$apps $ncexists $ocexists"
 tar -czf $bfolderfiles/$filename $appsinvar
-chown ansible $bfolderfiles/$filename
+chown $username $bfolderfiles/$filename
 chmod 600 $bfolderfiles/$filename
 
 ## WEEKLY BACKUP ##
